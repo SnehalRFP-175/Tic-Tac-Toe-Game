@@ -4,19 +4,26 @@ import java.util.Scanner;
 
 public class Tic_Tac_Toe {
 	
-	
-	private static char board[]=new char[10];
+	final static Character[][] board = {
+			{'_','|','_','|','_'},
+			{'_','|','_','|','_'},
+			{' ','|',' ','|',' '},
+			};
 	private static char player1;
 	
 	static Scanner sc=new Scanner(System.in);
 	/*
 	 * UC-1 Initialized Tic Tac Toe Game Board
 	 */
-	static void createBoard()
+	public static void createBoard()
 	{
-		for(int i = 1; i <= 9; i++) 
+		for(Character r[]:board) 
 		{
-			board[i] = ' ';
+			for(Character c:r)
+			{
+				System.out.print(c);
+			}
+			System.out.println( );	       	
 		}
 	}
 	
@@ -37,14 +44,22 @@ public class Tic_Tac_Toe {
 		}
 	}
 	
+	/*
+	 * UC-3 showBoard Method to display current board
+	 */
+	 static void showBoard()
+	 {
+		 createBoard();
+	 }
 	
-	
+	 
 	public static void main(String a[])
 	{
 		System.out.println("Welcome to Tic Tac Toe Game....!");
 		
 		createBoard();
 		playerInput();
+		showBoard();
 	}
 
 }
